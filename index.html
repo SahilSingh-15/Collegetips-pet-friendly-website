@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paws for a Cause</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Hero Section (Previous Code) -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>🐾 Paws for a Cause</h1>
+      <p class="slogan">Building a World Where Every Pet Thrives!</p>
+      <div class="cta-buttons">
+        <a href="#volunteer" class="btn btn-primary">Join the Movement</a>
+        <a href="#volunteer" class="btn btn-secondary">Volunteer Now</a>
+        <a href="#stories" class="btn btn-text">Learn More <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Volunteer Form Section with Background Illustrations -->
+<section id="volunteer" class="volunteer-section">
+    <!-- Background Illustrations -->
+    <div class="bg-illustration pet-volunteer"></div>
+    <div class="bg-illustration girl-with-cat"></div>
+    <div class="bg-illustration people-with-pets"></div>
+    <div class="bg-illustration dog-high-five"></div>
+    
+    <div class="container">
+      <h2>Become a Volunteer</h2>
+      <form id="volunteerForm" class="volunteer-form">
+        <div class="form-group">
+          <label for="name">Full Name*</label>
+          <input type="text" id="name" name="name" required placeholder="Your full name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email*</label>
+          <input type="email" id="email" name="email" required placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label for="city">City*</label>
+          <input type="text" id="city" name="city" required placeholder="Your city">
+        </div>
+        <div class="form-group">
+          <label for="role">Role Preference*</label>
+          <div class="select-wrapper">
+            <select id="role" name="role" required>
+              <option value="">Select a role</option>
+              <option value="foster">Foster Parent</option>
+              <option value="event">Event Volunteer</option>
+              <option value="transport">Transport Helper</option>
+              <option value="social">Social Media Advocate</option>
+              <option value="fundraising">Fundraising Coordinator</option>
+            </select>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="message">Why do you want to join? <span class="optional">(Optional)</span></label>
+          <textarea id="message" name="message" rows="4" placeholder="Share your motivation..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          <i class="fas fa-paw"></i> Submit Application
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Impact Stories Section -->
+  <section id="stories" class="stories-section">
+    <div class="container">
+      <h2>Our Impact Stories</h2>
+      <div class="stories-grid">
+        <!-- Story 1 -->
+        <div class="story-card">
+          <img src="assets/story-1.jpg" alt="Rescued dog">
+          <div class="story-content">
+            <h3>Max's Second Chance</h3>
+            <p>Max was found abandoned in the city. After 3 months in foster care, he found his forever home with the Johnson family.</p>
+            <a href="#" class="story-link">Read full story →</a>
+          </div>
+        </div>
+        <!-- Story 2 -->
+        <div class="story-card">
+          <img src="assets/story-2.jpg" alt="Community event">
+          <div class="story-content">
+            <h3>2023 Adoption Drive</h3>
+            <p>Our annual event helped 127 pets find homes in one weekend, thanks to 85 amazing volunteers.</p>
+            <a href="#" class="story-link">Read full story →</a>
+          </div>
+        </div>
+        <!-- Story 3 -->
+        <div class="story-card">
+          <img src="assets/story-3.jpg" alt="Veterinary care">
+          <div class="story-content">
+            <h3>Medical Fund Success</h3>
+            <p>We raised $15,000 for Luna's heart surgery. She's now thriving with her new family!</p>
+            <a href="#" class="story-link">Read full story →</a>
+          </div>
+        </div>
+      </div>
+      <div class="stories-cta">
+        <button id="loadMoreStories" class="btn btn-secondary">Load More Stories</button>
+      </div>
+    </div>
+  </section>
+  
+  <script src="script.js"></script>
+
+  <script>
+    (function () {
+      if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+        window.chatbase = (...args) => {
+          if (!window.chatbase.q) {
+            window.chatbase.q = [];
+          }
+          window.chatbase.q.push(args);
+        };
+        window.chatbase = new Proxy(window.chatbase, {
+          get(target, prop) {
+            if (prop === "q") return target.q;
+            return (...args) => target(prop, ...args);
+          },
+        });
+      }
+      const onLoad = function () {
+        const script = document.createElement("script");
+        script.src = "https://www.chatbase.co/embed.min.js";
+        script.id = "dXjm1hOfDNKIMyQXLsXYG"; // ✅ fixed here
+        script.domain = "www.chatbase.co";
+        document.body.appendChild(script);
+      };
+      if (document.readyState === "complete") {
+        onLoad();
+      } else {
+        window.addEventListener("load", onLoad);
+      }
+    })();
+  </script>
+  
+    
+</body>
+</html>
